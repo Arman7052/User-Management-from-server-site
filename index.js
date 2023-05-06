@@ -41,7 +41,9 @@ app.get('/users', (req,res) => {
 
 app.use(cors());
 
-
+app.post('/users',(req,res) => {
+    console.log(req.body);
+})
 
 app.get('/', (req, res) => {
     res.send('User Management Server is running')
