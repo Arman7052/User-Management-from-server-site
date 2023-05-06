@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 const cors = require('cors');
-
+app.use(cors());
+app.use(express.json())
 
 
 const users = [
@@ -39,7 +40,7 @@ app.get('/users', (req,res) => {
     res.send(users)
 })
 
-app.use(cors());
+
 
 app.post('/users',(req,res) => {
     console.log(req.body);
